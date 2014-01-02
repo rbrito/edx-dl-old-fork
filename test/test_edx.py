@@ -14,7 +14,7 @@ class TestEdx(unittest.TestCase):  # pylint: disable-msg=R0904
     Unit tests for edx_dl.
     """
     def setUp(self):  # pylint: disable-msg=C0103
-        self.token = edx_dl.get_initial_token()
+        self.token = edx_dl.get_initial_token('https://education.mongodb.com')
 
     def test_initial_token(self):
         """
