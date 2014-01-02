@@ -1,9 +1,11 @@
 # DESCRIPTION
 
-Simple tool to download video lectures from edx.org.  It requires the Python
-interpreter (v 2.x or 3.x), youtube-dl, BeautifulSoup4 and it's platform
-independent.  It should work fine in your Unix box, in Windows or in Mac OS
-X.
+Simple tool to download video lectures from edx-based sites.  It requires a
+Python interpreter (either version 2.x with x >= 6 or version 3.x), a recent
+version of `youtube-dl` and `BeautifulSoup4`.
+
+It is written to be platform independent and should work fine under any
+Unix, Windows or MacOS X system, provided the dependencies are met.
 
 # DEPENDENCIES
 
