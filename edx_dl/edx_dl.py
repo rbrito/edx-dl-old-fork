@@ -18,8 +18,8 @@ import sys
 
 from bs4 import BeautifulSoup
 
+import compat
 from .utils import (get_initial_token, get_course_list, get_page_contents)
-from .compat import *
 
 
 def parse_args():
@@ -145,11 +145,11 @@ def main():
     }
 
     logging.debug('Preparing login information.')
-    post_data = urlencode({'email': user_email,
-                           'password': user_pswd,
-                           'remember': False}).encode('utf-8')
-    request = Request(login_url, post_data, headers)
-    response = urlopen(request)
+    post_data = compat.urlencode({'email': user_email,
+                                  'password': user_pswd,
+                                  'remember': False}).encode('utf-8')
+    request = compat.Request(login_url, post_data, headers)
+    response = compat.urlopen(request)
     logging.debug('Opened request to %s', login_url)
 
     logging.debug('Grabbing response data')

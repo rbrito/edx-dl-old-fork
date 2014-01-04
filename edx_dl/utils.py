@@ -9,7 +9,7 @@ import subprocess
 
 from bs4 import BeautifulSoup
 
-from .compat import *
+import compat
 
 
 def get_page_contents(url, headers):
@@ -18,9 +18,9 @@ def get_page_contents(url, headers):
     request, we use the headers given in the dictionary in headers.
     """
     logging.debug('Getting page at %s with headers %s', url, headers)
-    req = Request(url, None, headers)
+    req = compat.Request(url, None, headers)
     logging.debug('Created request: %s', req)
-    result = urlopen(req)
+    result = compat.urlopen(req)
     logging.debug('Got result %s', result)
 
     return result.read()
@@ -34,9 +34,9 @@ def get_initial_token(homepage):
     X-CSRFToken (Cross-Site Request Forgery) header or the empty string if
     we didn't find any token in the cookies.
     """
-    cj = cookielib.CookieJar()
-    opener = build_opener(HTTPCookieProcessor(cj))
-    install_opener(opener)
+    cj = compat.cookielib.CookieJar()
+    opener = compat.build_opener(compat.HTTPCookieProcessor(cj))
+    compat.install_opener(opener)
     opener.open(homepage)
 
     for cookie in cj:
