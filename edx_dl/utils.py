@@ -4,12 +4,12 @@
 This module contains a set of functions to be used by edx-dl.
 """
 
-import cookielib
 import logging
 import subprocess
-import urllib2
 
 from bs4 import BeautifulSoup
+
+from .compat import *
 
 
 def get_page_contents(url, headers):
@@ -18,9 +18,9 @@ def get_page_contents(url, headers):
     request, we use the headers given in the dictionary in headers.
     """
     logging.debug('Getting page at %s with headers %s', url, headers)
-    req = urllib2.Request(url, None, headers)
+    req = Request(url, None, headers)
     logging.debug('Created request: %s', req)
-    result = urllib2.urlopen(req)
+    result = urlopen(req)
     logging.debug('Got result %s', result)
 
     return result.read()
@@ -35,8 +35,8 @@ def get_initial_token(homepage):
     we didn't find any token in the cookies.
     """
     cj = cookielib.CookieJar()
-    opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
-    urllib2.install_opener(opener)
+    opener = build_opener(HTTPCookieProcessor(cj))
+    install_opener(opener)
     opener.open(homepage)
 
     for cookie in cj:
