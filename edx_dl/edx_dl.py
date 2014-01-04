@@ -102,7 +102,7 @@ def parse_args():
     return args
 
 
-if __name__ == '__main__':
+def main():
     args = parse_args()
 
     user_email = args.username
@@ -229,3 +229,6 @@ if __name__ == '__main__':
             logging.debug('New style got: %s', id_container)
             for vid in id_container:
                 print(vid)
+
+if __name__ == '__main__':
+    main()
