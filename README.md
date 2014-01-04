@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/rbrito/edx-dl.png?branch=master)](https://travis-ci.org/rbrito/edx-dl)
+
+
 # DESCRIPTION
 
 Simple tool to download video lectures from edx-based sites.  It requires a
