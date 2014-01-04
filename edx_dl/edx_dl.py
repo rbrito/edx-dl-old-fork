@@ -110,7 +110,7 @@ if __name__ == '__main__':
     # FIXME: Proof of concept---refactor this to a function to the utils
     # module.
     regex = r'(?:https?://)(?P<site>[^/]+)/(?P<baseurl>[^/]+)/(?P<institution>[^/]+)/(?P<class>[^/]+)/(?P<offering>[^/]+).*'
-    m = re.match(regex, args.course_id[0]) # FIXME: considering only the first one
+    m = re.match(regex, args.course_id[0])  # FIXME: considering only the first one
 
     if m is None:
         logging.error('The URL provided is not valid for edX.')
@@ -125,14 +125,13 @@ if __name__ == '__main__':
     login_url = homepage + '/' + login_suffix
     dashboard = homepage + '/dashboard'
     course_id = '%s/%s/%s' % (m.group('institution'),
-                               m.group('class'),
-                               m.group('offering'))
+                              m.group('class'),
+                              m.group('offering'))
 
     logging.debug('Homepage: %s', homepage)
     logging.debug('Login URL: %s', login_url)
     logging.debug('Dashboard: %s', dashboard)
     logging.debug('Course ID: %s', course_id)
-
 
     logging.debug('Preparing headers.')
     headers = {
