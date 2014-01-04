@@ -20,7 +20,7 @@ import urllib2
 
 from bs4 import BeautifulSoup
 
-from utils import (get_initial_token, get_course_list, get_page_contents)
+from .utils import (get_initial_token, get_course_list, get_page_contents)
 
 
 def parse_args():

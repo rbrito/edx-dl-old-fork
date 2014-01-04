@@ -1,1 +1,5 @@
-edx_dl/edx_dl.py
+#!/usr/bin/env python
+
+from edx_dl import edx_dl
+
+edx_dl.main()
