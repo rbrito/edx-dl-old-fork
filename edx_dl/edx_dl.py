@@ -7,6 +7,8 @@ It requires a Python interpreter (>= 2.6), youtube-dl, BeautifulSoup4 and
 should be platform independent, meaning that it should work fine in your
 Unix box, in Windows or in Mac OS X.
 """
+from __future__ import print_function
+
 
 import argparse
 import json
@@ -164,7 +166,7 @@ if __name__ == '__main__':
     if args.list_courses:
         courses = get_course_list(headers, dashboard)
         for course in courses:
-            print '%s:%s:%s' % course
+            print('%s:%s:%s' % course)
         sys.exit(0)
 
     course_urls = []
@@ -226,4 +228,4 @@ if __name__ == '__main__':
             id_container = re.findall(regexp, page)
             logging.debug('New style got: %s', id_container)
             for vid in id_container:
-                print vid
+                print(vid)
