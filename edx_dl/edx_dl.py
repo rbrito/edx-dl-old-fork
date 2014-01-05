@@ -28,9 +28,9 @@ def parse_args():
     """
 
     parser = argparse.ArgumentParser(prog='edx-dl',
-                                     description='Get videos from edx.org',
-                                     epilog='For further use information,'
-                                     'see the file README.md',)
+                                     description='Get videos from edX-based sites',
+                                     epilog='For further use information, '
+                                     'see the file README.md')
 
     # positional
     parser.add_argument('course_id',
