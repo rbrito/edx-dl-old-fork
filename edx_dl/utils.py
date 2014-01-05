@@ -9,7 +9,7 @@ import subprocess
 
 from bs4 import BeautifulSoup
 
-import compat
+from . import compat
 
 
 def get_page_contents(url, headers):

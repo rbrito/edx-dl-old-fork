@@ -18,7 +18,7 @@ import sys
 
 from bs4 import BeautifulSoup
 
-import compat
+from . import compat
 from .utils import (get_initial_token, get_course_list, get_page_contents)
 
 
