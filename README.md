@@ -70,6 +70,19 @@ FIXME: This part is completely outdated and should be updated to reflect the
 changes of the `master` branch.
 
 
+For using the script, you will have to inform the script of 3 pieces of
+information:
+
+1. The URL of the class that you want to download the videos from.
+2. The e-mail address that you used to register with the site.
+3. Your password for that site.
+
+The URL of the class is one of the most important points. It should look
+like:
+
+    https://courses.edx.org/courses/BerkeleyX/CS191x/2013_Spring/courseware/
+
+
 ## For Python2.x
 To use `edx-dl.py`, simply excute it with 2 arguments: email and password,
 as in:
