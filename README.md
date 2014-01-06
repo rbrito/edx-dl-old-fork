@@ -15,6 +15,8 @@ system, provided the dependencies are met.
 
 # Installation
 
+## The recommended (supported) way
+
 The edx-dl program requires a Python interpreter (either version 2.x with
 x >= 6 or version 3.x) and some dependencies.
 
@@ -25,7 +27,7 @@ recommended way of installing them is to issue:
     pip install -r requirements.txt
 
 
-## Doing it on your own
+## Doing it on your own (a.k.a. the unsupported way)
 
 If you want to install the dependencies on your own (e.g., to have a minimal
 set of dependencies), you can simply install a sufficiently recent version
