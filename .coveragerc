@@ -1,0 +1,13 @@
+# -*- conf -*-
+[report]
+omit =
+    */python?.?/*
+    */site-packages/nose/*
+
+exclude_lines =
+    # Have to re-enable the standard pragma
+    pragma: no cover
+
+    # Python 2/3 compatibility
+    except ImportError
+    sys.version_info
