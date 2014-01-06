@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/rbrito/edx-dl.png?branch=master)](https://travis-ci.org/rbrito/edx-dl)
-
+[![Coverage Status](https://coveralls.io/repos/rbrito/edx-dl/badge.png)](https://coveralls.io/r/rbrito/edx-dl)
 
 # DESCRIPTION
 
