@@ -1,13 +1,16 @@
 [![Build Status](https://travis-ci.org/rbrito/edx-dl.png?branch=master)](https://travis-ci.org/rbrito/edx-dl)
 [![Coverage Status](https://coveralls.io/repos/rbrito/edx-dl/badge.png)](https://coveralls.io/r/rbrito/edx-dl)
 
-# DESCRIPTION
+# edx-dl
 
-Simple tool to download video lectures from edx-based sites.  It is written
-in Python and requires only a few modules (see the Installation section
-below for the requirements).  It is written to be platform independent and
-should work fine under any Unix, Windows or MacOS X system, provided the
-dependencies are met.
+`edx-dl` is a simple tool to download video lectures (and, optionally,
+subtitles) from edx-based sites, like edX.org, MongoDB.com or Stanford's
+online platforms.
+
+It is written in Python and requires only a few modules (see the
+Installation section below for the requirements).  It is written to be
+platform independent and should work fine under any Unix, Windows or MacOS X
+system, provided the dependencies are met.
 
 
 # Installation
