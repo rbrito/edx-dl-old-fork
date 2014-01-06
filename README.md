@@ -69,13 +69,16 @@ Otherwise, keep your `youtube-dl` version updated with the use of:
 FIXME: This part is completely outdated and should be updated to reflect the
 changes of the `master` branch.
 
+## Needed information
 
 For using the script, you will have to inform the script of 3 pieces of
 information:
 
 1. The URL of the class that you want to download the videos from.
-2. The e-mail address that you used to register with the site.
-3. Your password for that site.
+2. The e-mail address that you used to register with the site. For the sake
+   of the examples, we will assume that it is `user@example.com`.
+3. Your password for that site. For the sake of the examples, we will assume
+   that it is `123456`.
 
 The URL of the class is one of the most important points. It should look
 like:
@@ -83,24 +86,21 @@ like:
     https://courses.edx.org/courses/BerkeleyX/CS191x/2013_Spring/courseware/
 
 
-## For Python2.x
-To use `edx-dl.py`, simply excute it with 2 arguments: email and password,
-as in:
+## The actual usage
 
-    python edx-dl.py user@user.com 123456
+Regardless of if you are using Python 2 or Python 3, you can simply use:
 
-Your downloaded videos will be placed in a new Directory called
-"Downloaded".  The script is very interactive, and if you have a issue
-please tell us.
+    python edx-dl -u user@user.com -p 123456 https://courses.edx.org/courses/BerkeleyX/CS191x/2013_Spring/courseware/
 
 
-## For Python3.x
+## The result
 
-The instructions are the same as for python 2 except that you should use
-`edx-downloader.py` instead of `edx-dl.py`:
+In the current implementation (which is going to change soon), you will get
+a long stream of "garbage looking" lines, each with 11 characters, which are
+the IDs of the videos on Youtube.com. You should pass them as arguments to
+`youtube-dl` to get the videos actually downloaded.
 
-    python3 edx-downloader.py user@user.com 123456
-
+FIXME: Explain this better.
 
 ----
 
