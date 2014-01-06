@@ -13,7 +13,7 @@ matrix:
 # command to install dependencies
 install:
   - pip install -r requirements.txt
-  - pip install --use-mirrors coveralls
+  - pip install coveralls
 # command to run tests
 script: nosetests --verbose --with-coverage --cover-package=edx_dl
 
