@@ -184,8 +184,8 @@ def main():
 
     courseware = get_page_contents(url, headers)
     soup = BeautifulSoup(courseware)
-    data = soup.find("section",
-                     {"class": "content-wrapper"}).section.div.div.nav
+    data = soup.find('nav',
+                     {'aria-label':'Course Navigation'})
 
     weeks_soup = data.find_all('div')
 
