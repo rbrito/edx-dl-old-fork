@@ -114,8 +114,18 @@ def main():
     # FIXME: We consider only the first course that is passed as argument.
     # We should fix this.
 
+    # "Old-style" course URLs
+    # URLs like https://courses.edx.org/courses/UTAustinX/UT.5.02x/1T2015/info
     regex = r'(?:https?://)(?P<site>[^/]+)/(?P<baseurl>[^/]+)/(?P<institution>[^/]+)/(?P<class>[^/]+)/(?P<offering>[^/]+).*'
     m = re.match(regex, args.course_id[0])  # FIXME: considering only the first one
+    old_style_url = True
+
+    if m is None:
+        # URLs like https://courses.edx.org/courses/course-v1:Microsoft+DEV204x+2015_T2/info
+        regex = r'(?:https?://)(?P<site>[^/]+)/(?P<baseurl>[^/]+)/(?P<course_version>[^:]+):(?P<institution>[^+]+)\+(?P<class>[^+]+)\+(?P<offering>[^/]+).*'
+        m = re.match(regex, args.course_id[0])  # FIXME: considering only the first one
+        old_style_url = False
+
 
     if m is None:
         logging.error('The URL provided is not valid for edX.')
@@ -126,13 +136,21 @@ def main():
     else:
         login_suffix = 'login'
 
+
     homepage = 'https://' + m.group('site')
     login_url = homepage + '/' + login_suffix
     dashboard = homepage + '/dashboard'
-    course_id = '%s/%s/%s' % (m.group('institution'),
-                              m.group('class'),
-                              m.group('offering'))
+    if old_style_url:
+        course_id = '%s/%s/%s' % (m.group('institution'),
+                                  m.group('class'),
+                                  m.group('offering'))
+    else:
+        course_id = '%s:%s+%s+%s' % (m.group('course_version'),
+                                     m.group('institution'),
+                                     m.group('class'),
+                                     m.group('offering'))
 
+    logging.debug('Old-style url: %s', old_style_url)
     logging.debug('Homepage: %s', homepage)
     logging.debug('Login URL: %s', login_url)
     logging.debug('Dashboard: %s', dashboard)
