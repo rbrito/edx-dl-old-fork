@@ -205,13 +205,19 @@ def main():
     url = course_urls[0]
 
     courseware = get_page_contents(url, headers)
+    # with open('page.html', 'w') as f:
+    #    f.write(courseware)
     soup = BeautifulSoup(courseware)
     data = soup.find('nav',
                      {'aria-label':'Course Navigation'})
 
-    weeks_soup = data.find_all('div')
+    if data is None:
+        data = soup.find('section',
+                         {'class':'container'})
 
     weeks = []
+
+    weeks_soup = data.find_all('div')
     for week_soup in weeks_soup:
         week_name = week_soup.h3.a.string
         week_urls = [
@@ -220,6 +226,7 @@ def main():
         ]
 
         weeks.append((week_name, week_urls))
+
 
     # FIXME: Take the week into consideration
     # FIXME: Transform this into a function
