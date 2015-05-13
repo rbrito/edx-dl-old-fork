@@ -110,6 +110,10 @@ def main():
 
     # FIXME: Proof of concept---refactor this to a function to the utils
     # module.
+
+    # FIXME: We consider only the first course that is passed as argument.
+    # We should fix this.
+
     regex = r'(?:https?://)(?P<site>[^/]+)/(?P<baseurl>[^/]+)/(?P<institution>[^/]+)/(?P<class>[^/]+)/(?P<offering>[^/]+).*'
     m = re.match(regex, args.course_id[0])  # FIXME: considering only the first one
 
